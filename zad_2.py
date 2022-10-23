@@ -3,7 +3,7 @@ class Student:
         self._name = name
 
     def _str_(self):
-        return f'Student:\n{self._name}\n'
+        return f"Student:\n{self._name}\n"
 
 
 class Library:
@@ -15,10 +15,22 @@ class Library:
         self._phone = phone
 
     def _str_(self):
-        return f'Biblioteka:\n{self._street}, {self._zip_code} {self._city}\nTel.: {self._phone}\n'
+        return f"Biblioteka:\n{self._street}, {self._zip_code} \
+            {self._city}\nTel.: {self._phone}\n"
+
 
 class Employee:
-    def __init__(self, first_name, last_name, hire_date, birth_date, city, street, zip_code, phone):
+    def __init__(
+        self,
+        first_name,
+        last_name,
+        hire_date,
+        birth_date,
+        city,
+        street,
+        zip_code,
+        phone,
+    ):
         self._first_name = first_name
         self._last_name = last_name
         self._hire_date = hire_date
@@ -29,37 +41,72 @@ class Employee:
         self._phone = phone
 
     def _str_(self):
-        return f'Pracownik:\n{self._first_name} {self._last_name}, {self._phone}\n\n'
+        return f"Pracownik:\n{self._first_name} {self._last_name}, \
+            {self._phone}\n\n"
+
 
 class Book:
-    def __init__(self, library, publication_date, author_name, author_surname, number_of_pages):
+    def __init__(
+        self, library, publication_date, author_name, author_surname,
+            number_of_pages
+    ):
         self._library = library
         self._publication_date = publication_date
         self._author_name = author_name
         self._author_surname = author_surname
         self._number_of_pages = number_of_pages
 
-
     def _str_(self):
-        return f'{self._library._str_()}\n{self._author_name} {self._author_surname}\n'
+        return f"{self._library._str_()}\n{self._author_name} \
+            {self._author_surname}\n"
+
 
 class Order:
     def __init__(self, employee, student, books, order_date):
         self._employee = employee
         self._student = student
-        self._books = '\n'.join([x._str_() for x in books])
+        self._books = "\n".join([x._str_() for x in books])
         self._order_date = order_date
 
     def _str_(self):
-        return f'***\n{self._employee._str_()}{self._student._str_()}\n{self._books}\nData zamówienia:\n{self._order_date}\n***\n\n'
+        return f"***\n{self._employee._str_()}{self._student._str_()}\n\
+            {self._books}\nData zamówienia:\n{self._order_date}\n***\n\n"
+
 
 s1 = Student("Adam Kowalski")
 s2 = Student("Bartosz Kowalski")
 s3 = Student("Michał Kowalski")
 
-e1 = Employee("Adam", "Kowalski", "2020-10-10", "1990-10-10", "Katowice", "Mariacka", "43-120", 123456789)
-e2 = Employee("Bartosz", "Kowalski", "2020-10-10", "1990-10-10", "Katowice", "Mariacka", "43-120", 123456789)
-e3 = Employee("Michał", "Kowalski", "2020-10-10", "1990-10-10", "Katowice", "Mariacka", "43-120", 123456789) 
+e1 = Employee(
+    "Adam",
+    "Kowalski",
+    "2020-10-10",
+    "1990-10-10",
+    "Katowice",
+    "Mariacka",
+    "43-120",
+    123456789,
+)
+e2 = Employee(
+    "Bartosz",
+    "Kowalski",
+    "2020-10-10",
+    "1990-10-10",
+    "Katowice",
+    "Mariacka",
+    "43-120",
+    123456789,
+)
+e3 = Employee(
+    "Michał",
+    "Kowalski",
+    "2020-10-10",
+    "1990-10-10",
+    "Katowice",
+    "Mariacka",
+    "43-120",
+    123456789,
+)
 
 l1 = Library("Katowice", "Mariacka", "43-120", "8-20", 123456789)
 l2 = Library("Katowice", "Mariacka", "43-120", "8-20", 123456789)
